@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Scissor - URL Shortener</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", "Montserrat", sans-serif;
+      }
+
+      body {
+        /* background: linear-gradient(300deg, #f4f798 0%, #f8f9d0 50%, #ffffff 100%); */
+        background: radial-gradient(
+          circle at top,
+          #f6f4be 0%,
+          #fff 25%,
+          #fff 50%,
+          #fff 75%,
+          #fff 100%
+        );
+        color: #333;
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 90px;
+      }
+
+      .navbar .logo {
+        display: flex;
+        justify-content: center;
+        gap: 5px;
+        align-items: center;
+        font-size: 24px;
+        font-weight: bold;
+        color: #0065fe;
+      }
+
+      .navbar .logo img {
+        width: 24px;
+        height: 24px;
+      }
+
+      .navbar .logo span {
+        font-weight: normal;
+      }
+
+      .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 40px;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: black;
+      }
+
+      .nav-links a.active {
+        color: #0065fe;
+      }
+
+      .auth-buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .auth-buttons a {
+        text-decoration: none;
+        color: #007bff;
+      }
+
+      .auth-buttons button {
+        border-radius: 50px;
+      }
+
+      .hero {
+        text-align: center;
+        padding: 60px;
+        padding-bottom: 0px;
+      }
+
+      .hero h1 {
+        font-size: 48px;
+        line-height: 96px;
+      }
+
+      .hero-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .hero-content .hero-text {
+        text-align: center;
+        margin: 1rem;
+        width: 781px;
+        height: 105px;
+      }
+
+      .highlight {
+        position: relative;
+        color: #005ae2;
+      }
+
+      .highlight img {
+        position: absolute;
+        top: 3.5rem;
+        left: 5rem;
+        width: 173.63px;
+        height: 19.91px;
+      }
+
+      .hero-buttons {
+        display: flex;
+        gap: 10px;
+      }
+
+      .btn {
+        padding: 10px 40px;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+
+      .btn-primary {
+        background-color: #007bff;
+        color: white;
+      }
+
+      .btn-secondary {
+        background-color: transparent;
+        color: #007bff;
+      }
+
+      .hero-image {
+        position: relative;
+        margin-top: 50px;
+      }
+
+      .hero-image img:first-child {
+        width: 768px;
+        height: 224px;
+      }
+      .hero-image img:nth-child(2) {
+        position: absolute;
+        top: -12px;
+        left: 340px;
+        width: 238.55px;
+        height: 251.2px;
+        z-index: -1;
+      }
+      .hero-image img:last-child {
+        margin-top: 20px;
+        height: 93px;
+      }
+
+      .stats {
+        background-color: #f9fbfd;
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+        padding: 60px 140px;
+      }
+
+      .stat-caption {
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      .stat-caption p span {
+        color: #005ae2;
+      }
+
+      .items {
+        display: flex;
+        gap: 30px;
+      }
+
+      .stat-item h2 {
+        font-family: "Montserrat", sans-serif;
+        font-size: 32px;
+        font-weight: 500;
+      }
+
+      .stat-item p {
+        width: 160px;
+        font-weight: 300;
+        font-size: 16px;
+        color: #141414;
+      }
+
+      .features {
+        display: flex;
+      }
+
+      .features .top {
+        width: 40%;
+        padding: 60px ;
+      }
+
+      .features .cap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .features .cap h2 {
+        font-size: 40px;
+        width: 100%;
+      }
+
+      .features .cap > span {
+        height: 48px;
+        width: 5px;
+        background: linear-gradient(to top, #4d6b8800 0%, #112232 100%);
+      }
+
+      .features .cap p {
+        width: 370px;
+        font-size: 16px;
+        color: #141414;
+      }
+
+      .features .feature-container {
+        width: 60%;
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 40px;
+      }
+
+      .features .feature-container .group-one, .features .feature-container .group-two {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+      }
+
+      .features .feature-container .feature > div {
+        margin: 30px 0;
+      }
+
+      .features .feature-container .feature h3 {
+        font-size: 32px;
+      }
+
+      .features .feature-container .feature p {
+        width: 340px;
+        font-size: 16px;
+        color: #141414;
+      }
+
+      .pricing-cards {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+      }
+
+      .pricing-card {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+      }
+
+      .footer {
+        background-color: #222;
+        color: white;
+        text-align: center;
+        padding: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header class="header">
+      <nav class="navbar">
+        <div class="logo">
+          <img src="media/SciLogo.png" alt="Logo" /> <span> | </span> SCISSOR
+        </div>
+        <ul class="nav-links">
+          <li><a href="#" class="active">My URLs</a></li>
+          <li>
+            <a href="#">Features <i class="fas fa-chevron-down"></i></a>
+          </li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Analytics</a></li>
+          <li><a href="#">FAQs</a></li>
+        </ul>
+        <div class="auth-buttons">
+          <a href="#" class="login">Log in</a>
+          <button class="btn btn-primary">Try for free</button>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>
+          Optimize Your Online Experience with Our<br />
+          Advanced
+          <span class="highlight">
+            <img src="media/line.png" alt="line" /> URL Shortening </span
+          >Solution
+        </h1>
+        <p class="hero-text">
+          Personalize your shortened URLs to align with your brand identity.
+          Utilize custom slugs, branded links, and domain customization options
+          to reinforce your brand presence and enhance user engagement.
+        </p>
+        <div class="hero-buttons">
+          <button class="btn btn-primary">Sign Up</button>
+          <button class="btn btn-secondary">Learn More</button>
+        </div>
+        <div class="hero-image">
+          <img src="media/USL.png" alt="URL Shortening Illustration" />
+          <img src="media/blob.png" alt="blob" />
+          <img src="media/disk.png" alt="disk" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="stats">
+      <div class="stat-caption">
+        <p>One Stop.</p>
+        <p>Four <span>Possibilities</span>.</p>
+      </div>
+      <div class="items">
+        <div class="stat-item">
+          <h2>3M</h2>
+          <p>Active users</p>
+        </div>
+        <div class="stat-item">
+          <h2>60M</h2>
+          <p>Links & QR codes created</p>
+        </div>
+        <div class="stat-item">
+          <h2>1B</h2>
+          <p>Clicked & Scanned connections</p>
+        </div>
+        <div class="stat-item">
+          <h2>300k</h2>
+          <p>App Integrations</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section-->
+    <section class="features">
+      <div class="top">
+        <div class="cap">
+          <span></span>
+          <h2>Why Choose <span class="highlight">Scissors</span></h2>
+        </div>
+        <p>Scissors is the hub of everything that has to do with your link management. We shorten your URLs, allow you creating custom ones for your personal, business, event usage. Our swift QR code creation, management and usage tracking with advance analytics for all of these is second to none. </p>
+      </div>
+      <div class="feature-container">
+        <div class="group-one">
+          <div class="feature">
+            <div>
+              <span
+                ><svg
+                  width="57"
+                  height="56"
+                  viewBox="0 0 57 56"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clip-path="url(#clip0_1_202)">
+                    <path
+                      d="M31.1 23H34.1C34.7566 23 35.4068 23.1293 36.0134 23.3806C36.6201 23.6319 37.1712 24.0002 37.6355 24.4645C38.0998 24.9288 38.4681 25.48 38.7194 26.0866C38.9707 26.6932 39.1 27.3434 39.1 28C39.1 28.6566 38.9707 29.3068 38.7194 29.9134C38.4681 30.52 38.0998 31.0712 37.6355 31.5355C37.1712 31.9998 36.6201 32.3681 36.0134 32.6194C35.4068 32.8707 34.7566 33 34.1 33H31.1M25.1 33H22.1C21.4434 33 20.7932 32.8707 20.1866 32.6194C19.58 32.3681 19.0288 31.9998 18.5645 31.5355C17.6268 30.5979 17.1 29.3261 17.1 28C17.1 26.6739 17.6268 25.4021 18.5645 24.4645C19.5022 23.5268 20.7739 23 22.1 23H25.1"
+                      stroke="#141414"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M24.1 28H32.1"
+                      stroke="#005AE2"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </g>
+                  <circle
+                    cx="28.1"
+                    cy="28"
+                    r="28"
+                    fill="#3284FF"
+                    fill-opacity="0.13"
+                  />
+                  <defs>
+                    <clipPath id="clip0_1_202">
+                      <rect
+                        width="24"
+                        height="24"
+                        fill="white"
+                        transform="translate(16.1 16)"
+                      />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </span>
+            </div>
+            <h3>URL Shortening</h3>
+            <p>
+              Scissor allows you to shorten URLs of your business, events.
+              Shorten your URL at scale, URL redirects.
+            </p>
+          </div>
+
+          <div class="feature">
+            <div>
+              <span
+                ><svg
+                  width="57"
+                  height="56"
+                  viewBox="0 0 57 56"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M25.8859 19.0676H18.8859V26.0676H25.8859V19.0676Z"
+                    stroke="black"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M36.8859 19.0676H29.8859V26.0676H36.8859V19.0676Z"
+                    stroke="#005AE2"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M36.8859 30.0676H29.8859V37.0676H36.8859V30.0676Z"
+                    stroke="black"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M25.8859 30.0676H18.8859V37.0676H25.8859V30.0676Z"
+                    stroke="#005AE2"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <circle
+                    cx="28.1"
+                    cy="28"
+                    r="28"
+                    fill="#3284FF"
+                    fill-opacity="0.13"
+                  />
+                </svg>
+              </span>
+            </div>
+            <h3>Data Analytics</h3>
+            <p>
+              Generate QR codes to your business, events. Bring your audience
+              and customers to your doorstep with this scan and go solution.
+            </p>
+          </div>
+        </div>
+        <div class="group-two">
+          <div class="feature">
+            <div>
+              <span
+                ><svg
+                  width="57"
+                  height="56"
+                  viewBox="0 0 57 56"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M27.1 20H20.1C19.5696 20 19.0609 20.2107 18.6858 20.5858C18.3107 20.9609 18.1 21.4696 18.1 22V36C18.1 36.5304 18.3107 37.0391 18.6858 37.4142C19.0609 37.7893 19.5696 38 20.1 38H34.1C34.6304 38 35.1391 37.7893 35.5142 37.4142C35.8893 37.0391 36.1 36.5304 36.1 36V29"
+                    stroke="black"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M34.6 18.5C34.9978 18.1022 35.5374 17.8787 36.1 17.8787C36.6626 17.8787 37.2022 18.1022 37.6 18.5C37.9978 18.8978 38.2213 19.4374 38.2213 20C38.2213 20.5626 37.9978 21.1022 37.6 21.5L28.1 31L24.1 32L25.1 28L34.6 18.5Z"
+                    stroke="#005AE2"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <circle
+                    cx="28.1"
+                    cy="28"
+                    r="28"
+                    fill="#3284FF"
+                    fill-opacity="0.13"
+                  />
+                </svg>
+              </span>
+            </div>
+            <h3>Custom URLs</h3>
+            <p>
+              With Scissor, you can create custom URLs, with the length you
+              want! A solution for socials and businesses.
+            </p>
+          </div>
+          <div class="feature">
+            <div>
+              <span
+                ><svg
+                  width="57"
+                  height="56"
+                  viewBox="0 0 57 56"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clip-path="url(#clip0_1_235)">
+                    <path
+                      d="M37.1 28H33.1L30.1 37L24.1 19L21.1 28H17.1"
+                      stroke="#0065FE"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </g>
+                  <circle
+                    cx="28.1"
+                    cy="28"
+                    r="28"
+                    fill="#3284FF"
+                    fill-opacity="0.13"
+                  />
+                  <defs>
+                    <clipPath id="clip0_1_235">
+                      <rect
+                        width="24"
+                        height="24"
+                        fill="white"
+                        transform="translate(16.1 16)"
+                      />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </span>
+            </div>
+            <h3>QR Codes</h3>
+            <p>
+              Receive data on the usage of either your shortened URL, custom
+              URLs or generated QR codes. Embedded to monitor progress.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section-->
+    <section class="pricing">
+      <h2>A <span class="highlight">price perfect</span> for your needs</h2>
+      <div class="pricing-cards">
+        <div class="pricing-card basic">
+          <h3>Basic</h3>
+          <p>Free</p>
+          <ul>
+            <li>✅ Unlimited URL Shortening</li>
+            <li>✅ Basic Link Analytics</li>
+          </ul>
+        </div>
+        <div class="pricing-card professional">
+          <h3>Professional</h3>
+          <p>$15/month</p>
+          <ul>
+            <li>✅ Enhanced Analytics</li>
+            <li>✅ Custom Branded Domains</li>
+          </ul>
+        </div>
+        <div class="pricing-card teams">
+          <h3>Teams</h3>
+          <p>$25/month</p>
+          <ul>
+            <li>✅ Team Collaboration</li>
+            <li>✅ API Access</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+      <h2>FAQs</h2>
+      <details>
+        <summary>How does URL shortening work?</summary>
+        <p>
+          URL shortening works by taking a long URL and creating a shorter
+          version...
+        </p>
+      </details>
+      <details>
+        <summary>Can I customize the shortened URLs?</summary>
+        <p>Yes, you can create custom branded links...</p>
+      </details>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <h2>Revolutionizing Link Optimization</h2>
+      <button class="btn btn-primary">Get Started</button>
+      <div class="footer-links">
+        <div>
+          <h3>Why Scissor?</h3>
+          <p>Scissor 101, API & Pricing</p>
+        </div>
+        <div>
+          <h3>Solutions</h3>
+          <p>Social Media, Digital Marketing</p>
+        </div>
+        <div>
+          <h3>Products</h3>
+          <p>Link Management, QR Codes</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
