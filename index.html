@@ -225,7 +225,7 @@
 
       .features .top {
         width: 40%;
-        padding: 60px ;
+        padding: 60px;
       }
 
       .features .cap {
@@ -256,11 +256,12 @@
         width: 60%;
         display: flex;
         justify-content: center;
-        gap: 30px;
+        gap: 60px;
         margin-top: 40px;
       }
 
-      .features .feature-container .group-one, .features .feature-container .group-two {
+      .features .feature-container .group-one,
+      .features .feature-container .group-two {
         display: flex;
         flex-direction: column;
         gap: 30px;
@@ -276,6 +277,37 @@
 
       .features .feature-container .feature p {
         width: 340px;
+        font-size: 16px;
+        color: #141414;
+      }
+
+      .pricing .cap {
+        margin: 8rem 0 5rem;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .pricing .cap > div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .pricing .cap h2 {
+        font-size: 40px;
+      }
+
+      .pricing .cap .bar {
+        height: 48px;
+        width: 5px;
+        background: linear-gradient(to top, #4d6b8800 0%, #112232 100%);
+      }
+
+      .pricing .cap p {
+        width: 580px;
         font-size: 16px;
         color: #141414;
       }
@@ -383,7 +415,13 @@
           <span></span>
           <h2>Why Choose <span class="highlight">Scissors</span></h2>
         </div>
-        <p>Scissors is the hub of everything that has to do with your link management. We shorten your URLs, allow you creating custom ones for your personal, business, event usage. Our swift QR code creation, management and usage tracking with advance analytics for all of these is second to none. </p>
+        <p>
+          Scissors is the hub of everything that has to do with your link
+          management. We shorten your URLs, allow you creating custom ones for
+          your personal, business, event usage. Our swift QR code creation,
+          management and usage tracking with advance analytics for all of these
+          is second to none.
+        </p>
       </div>
       <div class="feature-container">
         <div class="group-one">
@@ -587,7 +625,13 @@
 
     <!-- Pricing Section-->
     <section class="pricing">
-      <h2>A <span class="highlight">price perfect</span> for your needs</h2>
+      <div class="cap">
+        <div class="">
+          <span class="bar"></span>
+          <h2>A <span class="highlight">price perfect</span> for your needs.</h2>
+        </div>
+        <p>From catering for your personal, business, event, socials needs, you can be rest assured we have you in mind in our pricing.</p>
+      </div>
       <div class="pricing-cards">
         <div class="pricing-card basic">
           <h3>Basic</h3>
