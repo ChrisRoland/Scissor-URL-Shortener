@@ -22,315 +22,8 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="styles.css" />
     <title>Scissor - URL Shortener</title>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Poppins", "Montserrat", sans-serif;
-      }
-
-      body {
-        /* background: linear-gradient(300deg, #f4f798 0%, #f8f9d0 50%, #ffffff 100%); */
-        background: radial-gradient(
-          circle at top,
-          #f6f4be 0%,
-          #fff 25%,
-          #fff 50%,
-          #fff 75%,
-          #fff 100%
-        );
-        color: #333;
-      }
-
-      .navbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px 90px;
-      }
-
-      .navbar .logo {
-        display: flex;
-        justify-content: center;
-        gap: 5px;
-        align-items: center;
-        font-size: 24px;
-        font-weight: bold;
-        color: #0065fe;
-      }
-
-      .navbar .logo img {
-        width: 24px;
-        height: 24px;
-      }
-
-      .navbar .logo span {
-        font-weight: normal;
-      }
-
-      .nav-links {
-        display: flex;
-        list-style: none;
-        gap: 40px;
-      }
-
-      .nav-links a {
-        text-decoration: none;
-        color: black;
-      }
-
-      .nav-links a.active {
-        color: #0065fe;
-      }
-
-      .auth-buttons {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 20px;
-      }
-
-      .auth-buttons a {
-        text-decoration: none;
-        color: #007bff;
-      }
-
-      .auth-buttons button {
-        border-radius: 50px;
-      }
-
-      .hero {
-        text-align: center;
-        padding: 60px;
-        padding-bottom: 0px;
-      }
-
-      .hero h1 {
-        font-size: 48px;
-        line-height: 96px;
-      }
-
-      .hero-content {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .hero-content .hero-text {
-        text-align: center;
-        margin: 1rem;
-        width: 781px;
-        height: 105px;
-      }
-
-      .highlight {
-        position: relative;
-        color: #005ae2;
-      }
-
-      .highlight img {
-        position: absolute;
-        top: 3.5rem;
-        left: 5rem;
-        width: 173.63px;
-        height: 19.91px;
-      }
-
-      .hero-buttons {
-        display: flex;
-        gap: 10px;
-      }
-
-      .btn {
-        padding: 10px 40px;
-        border: none;
-        border-radius: 50px;
-        cursor: pointer;
-        font-weight: bold;
-      }
-
-      .btn-primary {
-        background-color: #007bff;
-        color: white;
-      }
-
-      .btn-secondary {
-        background-color: transparent;
-        color: #007bff;
-      }
-
-      .hero-image {
-        position: relative;
-        margin-top: 50px;
-      }
-
-      .hero-image img:first-child {
-        width: 768px;
-        height: 224px;
-      }
-      .hero-image img:nth-child(2) {
-        position: absolute;
-        top: -12px;
-        left: 340px;
-        width: 238.55px;
-        height: 251.2px;
-        z-index: -1;
-      }
-      .hero-image img:last-child {
-        margin-top: 20px;
-        height: 93px;
-      }
-
-      .stats {
-        background-color: #f9fbfd;
-        display: flex;
-        justify-content: space-between;
-        gap: 30px;
-        padding: 60px 140px;
-      }
-
-      .stat-caption {
-        font-size: 40px;
-        font-weight: bold;
-      }
-
-      .stat-caption p span {
-        color: #005ae2;
-      }
-
-      .items {
-        display: flex;
-        gap: 30px;
-      }
-
-      .stat-item h2 {
-        font-family: "Montserrat", sans-serif;
-        font-size: 32px;
-        font-weight: 500;
-      }
-
-      .stat-item p {
-        width: 160px;
-        font-weight: 300;
-        font-size: 16px;
-        color: #141414;
-      }
-
-      .features {
-        display: flex;
-      }
-
-      .features .top {
-        width: 40%;
-        padding: 60px;
-      }
-
-      .features .cap {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
-      }
-
-      .features .cap h2 {
-        font-size: 40px;
-        width: 100%;
-      }
-
-      .features .cap > span {
-        height: 48px;
-        width: 5px;
-        background: linear-gradient(to top, #4d6b8800 0%, #112232 100%);
-      }
-
-      .features .cap p {
-        width: 370px;
-        font-size: 16px;
-        color: #141414;
-      }
-
-      .features .feature-container {
-        width: 60%;
-        display: flex;
-        justify-content: center;
-        gap: 60px;
-        margin-top: 40px;
-      }
-
-      .features .feature-container .group-one,
-      .features .feature-container .group-two {
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-      }
-
-      .features .feature-container .feature > div {
-        margin: 30px 0;
-      }
-
-      .features .feature-container .feature h3 {
-        font-size: 32px;
-      }
-
-      .features .feature-container .feature p {
-        width: 340px;
-        font-size: 16px;
-        color: #141414;
-      }
-
-      .pricing .cap {
-        margin: 8rem 0 5rem;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .pricing .cap > div {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
-      }
-
-      .pricing .cap h2 {
-        font-size: 40px;
-      }
-
-      .pricing .cap .bar {
-        height: 48px;
-        width: 5px;
-        background: linear-gradient(to top, #4d6b8800 0%, #112232 100%);
-      }
-
-      .pricing .cap p {
-        width: 580px;
-        font-size: 16px;
-        color: #141414;
-      }
-
-      .pricing-cards {
-        display: flex;
-        justify-content: center;
-        gap: 30px;
-      }
-
-      .pricing-card {
-        background: white;
-        padding: 20px;
-        border-radius: 10px;
-      }
-
-      .footer {
-        background-color: #222;
-        color: white;
-        text-align: center;
-        padding: 40px;
-      }
-    </style>
   </head>
   <body>
     <!-- Header Section -->
@@ -628,52 +321,576 @@
       <div class="cap">
         <div class="">
           <span class="bar"></span>
-          <h2>A <span class="highlight">price perfect</span> for your needs.</h2>
+          <h2>
+            A <span class="highlight">price perfect</span> for your needs.
+          </h2>
         </div>
-        <p>From catering for your personal, business, event, socials needs, you can be rest assured we have you in mind in our pricing.</p>
+        <p>
+          From catering for your personal, business, event, socials needs, you
+          can be rest assured we have you in mind in our pricing.
+        </p>
       </div>
       <div class="pricing-cards">
         <div class="pricing-card basic">
           <h3>Basic</h3>
-          <p>Free</p>
+          <p class="amount">Free</p>
+          <p class="narr">Free plan for all users</p>
           <ul>
-            <li>✅ Unlimited URL Shortening</li>
-            <li>✅ Basic Link Analytics</li>
+            <li>
+              <span
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clip-path="url(#clip0_1_252)">
+                    <path
+                      d="M14.6667 7.38668V8.00001C14.6659 9.43763 14.2003 10.8365 13.3396 11.9879C12.4788 13.1393 11.2689 13.9817 9.89025 14.3893C8.51163 14.7969 7.03818 14.7479 5.68966 14.2497C4.34113 13.7515 3.18978 12.8307 2.40732 11.6247C1.62485 10.4187 1.2532 8.99205 1.34779 7.55755C1.44239 6.12305 1.99815 4.75756 2.9322 3.66473C3.86625 2.57189 5.12853 1.81027 6.5308 1.49344C7.93307 1.17662 9.40019 1.32157 10.7133 1.90668"
+                      stroke="#005AE2"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M14.6667 2.66666L8 9.33999L6 7.33999"
+                      stroke="#005AE2"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_1_252">
+                      <rect width="16" height="16" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </span>
+              Unlimited URL Shortening
+            </li>
+            <li>
+              <span
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clip-path="url(#clip0_1_252)">
+                    <path
+                      d="M14.6667 7.38668V8.00001C14.6659 9.43763 14.2003 10.8365 13.3396 11.9879C12.4788 13.1393 11.2689 13.9817 9.89025 14.3893C8.51163 14.7969 7.03818 14.7479 5.68966 14.2497C4.34113 13.7515 3.18978 12.8307 2.40732 11.6247C1.62485 10.4187 1.2532 8.99205 1.34779 7.55755C1.44239 6.12305 1.99815 4.75756 2.9322 3.66473C3.86625 2.57189 5.12853 1.81027 6.5308 1.49344C7.93307 1.17662 9.40019 1.32157 10.7133 1.90668"
+                      stroke="#005AE2"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M14.6667 2.66666L8 9.33999L6 7.33999"
+                      stroke="#005AE2"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_1_252">
+                      <rect width="16" height="16" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </span>
+              Basic Link Analytics
+            </li>
+            <li>
+              <span
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clip-path="url(#clip0_1_252)">
+                    <path
+                      d="M14.6667 7.38668V8.00001C14.6659 9.43763 14.2003 10.8365 13.3396 11.9879C12.4788 13.1393 11.2689 13.9817 9.89025 14.3893C8.51163 14.7969 7.03818 14.7479 5.68966 14.2497C4.34113 13.7515 3.18978 12.8307 2.40732 11.6247C1.62485 10.4187 1.2532 8.99205 1.34779 7.55755C1.44239 6.12305 1.99815 4.75756 2.9322 3.66473C3.86625 2.57189 5.12853 1.81027 6.5308 1.49344C7.93307 1.17662 9.40019 1.32157 10.7133 1.90668"
+                      stroke="#005AE2"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M14.6667 2.66666L8 9.33999L6 7.33999"
+                      stroke="#005AE2"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_1_252">
+                      <rect width="16" height="16" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </span>
+              Customizable Short Links
+            </li>
+            <li>
+              <span
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clip-path="url(#clip0_1_252)">
+                    <path
+                      d="M14.6667 7.38668V8.00001C14.6659 9.43763 14.2003 10.8365 13.3396 11.9879C12.4788 13.1393 11.2689 13.9817 9.89025 14.3893C8.51163 14.7969 7.03818 14.7479 5.68966 14.2497C4.34113 13.7515 3.18978 12.8307 2.40732 11.6247C1.62485 10.4187 1.2532 8.99205 1.34779 7.55755C1.44239 6.12305 1.99815 4.75756 2.9322 3.66473C3.86625 2.57189 5.12853 1.81027 6.5308 1.49344C7.93307 1.17662 9.40019 1.32157 10.7133 1.90668"
+                      stroke="#005AE2"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M14.6667 2.66666L8 9.33999L6 7.33999"
+                      stroke="#005AE2"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_1_252">
+                      <rect width="16" height="16" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </span>
+              Standard Support
+            </li>
+            <li>
+              <span
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clip-path="url(#clip0_1_252)">
+                    <path
+                      d="M14.6667 7.38668V8.00001C14.6659 9.43763 14.2003 10.8365 13.3396 11.9879C12.4788 13.1393 11.2689 13.9817 9.89025 14.3893C8.51163 14.7969 7.03818 14.7479 5.68966 14.2497C4.34113 13.7515 3.18978 12.8307 2.40732 11.6247C1.62485 10.4187 1.2532 8.99205 1.34779 7.55755C1.44239 6.12305 1.99815 4.75756 2.9322 3.66473C3.86625 2.57189 5.12853 1.81027 6.5308 1.49344C7.93307 1.17662 9.40019 1.32157 10.7133 1.90668"
+                      stroke="#005AE2"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M14.6667 2.66666L8 9.33999L6 7.33999"
+                      stroke="#005AE2"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_1_252">
+                      <rect width="16" height="16" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </span>
+              Ad-supported
+            </li>
           </ul>
         </div>
         <div class="pricing-card professional">
           <h3>Professional</h3>
-          <p>$15/month</p>
+          <p class="amount">$15/month</p>
+          <p class="narr">Ideal for business creators</p>
           <ul>
-            <li>✅ Enhanced Analytics</li>
-            <li>✅ Custom Branded Domains</li>
+            <li>
+              <span
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clip-path="url(#clip0_1_316)">
+                    <path
+                      d="M14.6667 7.38668V8.00001C14.6658 9.43763 14.2003 10.8365 13.3396 11.9879C12.4788 13.1393 11.2689 13.9817 9.89023 14.3893C8.51162 14.7969 7.03817 14.7479 5.68964 14.2497C4.34112 13.7515 3.18976 12.8307 2.4073 11.6247C1.62484 10.4187 1.25319 8.99205 1.34778 7.55755C1.44237 6.12305 1.99813 4.75756 2.93218 3.66473C3.86623 2.57189 5.12852 1.81027 6.53079 1.49344C7.93306 1.17662 9.40017 1.32157 10.7133 1.90668"
+                      stroke="white"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M14.6667 2.66666L8 9.33999L6 7.33999"
+                      stroke="white"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_1_316">
+                      <rect width="16" height="16" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </span>
+              Enhanced Link Analytics
+            </li>
+            <li>
+              <span
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clip-path="url(#clip0_1_316)">
+                    <path
+                      d="M14.6667 7.38668V8.00001C14.6658 9.43763 14.2003 10.8365 13.3396 11.9879C12.4788 13.1393 11.2689 13.9817 9.89023 14.3893C8.51162 14.7969 7.03817 14.7479 5.68964 14.2497C4.34112 13.7515 3.18976 12.8307 2.4073 11.6247C1.62484 10.4187 1.25319 8.99205 1.34778 7.55755C1.44237 6.12305 1.99813 4.75756 2.93218 3.66473C3.86623 2.57189 5.12852 1.81027 6.53079 1.49344C7.93306 1.17662 9.40017 1.32157 10.7133 1.90668"
+                      stroke="white"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M14.6667 2.66666L8 9.33999L6 7.33999"
+                      stroke="white"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_1_316">
+                      <rect width="16" height="16" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </span>
+              Custom Branded Domains
+            </li>
+            <li>
+              <span
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clip-path="url(#clip0_1_316)">
+                    <path
+                      d="M14.6667 7.38668V8.00001C14.6658 9.43763 14.2003 10.8365 13.3396 11.9879C12.4788 13.1393 11.2689 13.9817 9.89023 14.3893C8.51162 14.7969 7.03817 14.7479 5.68964 14.2497C4.34112 13.7515 3.18976 12.8307 2.4073 11.6247C1.62484 10.4187 1.25319 8.99205 1.34778 7.55755C1.44237 6.12305 1.99813 4.75756 2.93218 3.66473C3.86623 2.57189 5.12852 1.81027 6.53079 1.49344C7.93306 1.17662 9.40017 1.32157 10.7133 1.90668"
+                      stroke="white"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M14.6667 2.66666L8 9.33999L6 7.33999"
+                      stroke="white"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_1_316">
+                      <rect width="16" height="16" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </span>
+              Advanced Link Customization
+            </li>
+            <li>
+              <span
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clip-path="url(#clip0_1_316)">
+                    <path
+                      d="M14.6667 7.38668V8.00001C14.6658 9.43763 14.2003 10.8365 13.3396 11.9879C12.4788 13.1393 11.2689 13.9817 9.89023 14.3893C8.51162 14.7969 7.03817 14.7479 5.68964 14.2497C4.34112 13.7515 3.18976 12.8307 2.4073 11.6247C1.62484 10.4187 1.25319 8.99205 1.34778 7.55755C1.44237 6.12305 1.99813 4.75756 2.93218 3.66473C3.86623 2.57189 5.12852 1.81027 6.53079 1.49344C7.93306 1.17662 9.40017 1.32157 10.7133 1.90668"
+                      stroke="white"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M14.6667 2.66666L8 9.33999L6 7.33999"
+                      stroke="white"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_1_316">
+                      <rect width="16" height="16" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </span>
+              Priority Support
+            </li>
+            <li>
+              <span
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clip-path="url(#clip0_1_316)">
+                    <path
+                      d="M14.6667 7.38668V8.00001C14.6658 9.43763 14.2003 10.8365 13.3396 11.9879C12.4788 13.1393 11.2689 13.9817 9.89023 14.3893C8.51162 14.7969 7.03817 14.7479 5.68964 14.2497C4.34112 13.7515 3.18976 12.8307 2.4073 11.6247C1.62484 10.4187 1.25319 8.99205 1.34778 7.55755C1.44237 6.12305 1.99813 4.75756 2.93218 3.66473C3.86623 2.57189 5.12852 1.81027 6.53079 1.49344C7.93306 1.17662 9.40017 1.32157 10.7133 1.90668"
+                      stroke="white"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M14.6667 2.66666L8 9.33999L6 7.33999"
+                      stroke="white"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_1_316">
+                      <rect width="16" height="16" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </span>
+              Ad-free Experience
+            </li>
           </ul>
         </div>
         <div class="pricing-card teams">
           <h3>Teams</h3>
-          <p>$25/month</p>
+          <p class="amount">$25/month</p>
+          <p class="narr">Free plan for all users</p>
           <ul>
-            <li>✅ Team Collaboration</li>
-            <li>✅ API Access</li>
+            <li>
+              <span
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clip-path="url(#clip0_1_252)">
+                    <path
+                      d="M14.6667 7.38668V8.00001C14.6659 9.43763 14.2003 10.8365 13.3396 11.9879C12.4788 13.1393 11.2689 13.9817 9.89025 14.3893C8.51163 14.7969 7.03818 14.7479 5.68966 14.2497C4.34113 13.7515 3.18978 12.8307 2.40732 11.6247C1.62485 10.4187 1.2532 8.99205 1.34779 7.55755C1.44239 6.12305 1.99815 4.75756 2.9322 3.66473C3.86625 2.57189 5.12853 1.81027 6.5308 1.49344C7.93307 1.17662 9.40019 1.32157 10.7133 1.90668"
+                      stroke="#005AE2"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M14.6667 2.66666L8 9.33999L6 7.33999"
+                      stroke="#005AE2"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_1_252">
+                      <rect width="16" height="16" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </span>
+              Team Collaboration
+            </li>
+            <li>
+              <span
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clip-path="url(#clip0_1_252)">
+                    <path
+                      d="M14.6667 7.38668V8.00001C14.6659 9.43763 14.2003 10.8365 13.3396 11.9879C12.4788 13.1393 11.2689 13.9817 9.89025 14.3893C8.51163 14.7969 7.03818 14.7479 5.68966 14.2497C4.34113 13.7515 3.18978 12.8307 2.40732 11.6247C1.62485 10.4187 1.2532 8.99205 1.34779 7.55755C1.44239 6.12305 1.99815 4.75756 2.9322 3.66473C3.86625 2.57189 5.12853 1.81027 6.5308 1.49344C7.93307 1.17662 9.40019 1.32157 10.7133 1.90668"
+                      stroke="#005AE2"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M14.6667 2.66666L8 9.33999L6 7.33999"
+                      stroke="#005AE2"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_1_252">
+                      <rect width="16" height="16" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </span>
+              User Roles and Permissions
+            </li>
+            <li>
+              <span
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clip-path="url(#clip0_1_252)">
+                    <path
+                      d="M14.6667 7.38668V8.00001C14.6659 9.43763 14.2003 10.8365 13.3396 11.9879C12.4788 13.1393 11.2689 13.9817 9.89025 14.3893C8.51163 14.7969 7.03818 14.7479 5.68966 14.2497C4.34113 13.7515 3.18978 12.8307 2.40732 11.6247C1.62485 10.4187 1.2532 8.99205 1.34779 7.55755C1.44239 6.12305 1.99815 4.75756 2.9322 3.66473C3.86625 2.57189 5.12853 1.81027 6.5308 1.49344C7.93307 1.17662 9.40019 1.32157 10.7133 1.90668"
+                      stroke="#005AE2"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M14.6667 2.66666L8 9.33999L6 7.33999"
+                      stroke="#005AE2"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_1_252">
+                      <rect width="16" height="16" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </span>
+              Enhanced Security
+            </li>
+            <li>
+              <span
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clip-path="url(#clip0_1_252)">
+                    <path
+                      d="M14.6667 7.38668V8.00001C14.6659 9.43763 14.2003 10.8365 13.3396 11.9879C12.4788 13.1393 11.2689 13.9817 9.89025 14.3893C8.51163 14.7969 7.03818 14.7479 5.68966 14.2497C4.34113 13.7515 3.18978 12.8307 2.40732 11.6247C1.62485 10.4187 1.2532 8.99205 1.34779 7.55755C1.44239 6.12305 1.99815 4.75756 2.9322 3.66473C3.86625 2.57189 5.12853 1.81027 6.5308 1.49344C7.93307 1.17662 9.40019 1.32157 10.7133 1.90668"
+                      stroke="#005AE2"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M14.6667 2.66666L8 9.33999L6 7.33999"
+                      stroke="#005AE2"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_1_252">
+                      <rect width="16" height="16" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </span>
+              API Access
+            </li>
+            <li>
+              <span
+                ><svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clip-path="url(#clip0_1_252)">
+                    <path
+                      d="M14.6667 7.38668V8.00001C14.6659 9.43763 14.2003 10.8365 13.3396 11.9879C12.4788 13.1393 11.2689 13.9817 9.89025 14.3893C8.51163 14.7969 7.03818 14.7479 5.68966 14.2497C4.34113 13.7515 3.18978 12.8307 2.40732 11.6247C1.62485 10.4187 1.2532 8.99205 1.34779 7.55755C1.44239 6.12305 1.99815 4.75756 2.9322 3.66473C3.86625 2.57189 5.12853 1.81027 6.5308 1.49344C7.93307 1.17662 9.40019 1.32157 10.7133 1.90668"
+                      stroke="#005AE2"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M14.6667 2.66666L8 9.33999L6 7.33999"
+                      stroke="#005AE2"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_1_252">
+                      <rect width="16" height="16" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </span>
+              Dedicated Account Manager
+            </li>
           </ul>
         </div>
       </div>
+      <div class="pricing-cta">
+        <button class="btn btn-primary">Get Custom Pricing</button>
+        <button class="btn btn-secondary">Select Pricing</button>
+      </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section class="faq">
+    <!-- FAQs Section -->
+    <section class="faqs">
       <h2>FAQs</h2>
       <details>
         <summary>How does URL shortening work?</summary>
         <p>
-          URL shortening works by taking a long URL and creating a shorter
-          version...
+          URL shortening works by taking a long URL and creating a shorter,
+          condensed version that redirects to the original URL. When a user
+          clicks on the shortened link, they are redirected to the intended
+          destination.
         </p>
       </details>
       <details>
-        <summary>Can I customize the shortened URLs?</summary>
-        <p>Yes, you can create custom branded links...</p>
+        <summary>
+          Can I customize the shortened URLs to reflect my brand or content?
+        </summary>
+        <p>
+          Yes, you can create custom branded links with Scissor's URL
+          customization features.
+        </p>
       </details>
+      <!-- Add more FAQ sections as needed -->
     </section>
 
     <!-- Footer -->
@@ -683,15 +900,21 @@
       <div class="footer-links">
         <div>
           <h3>Why Scissor?</h3>
-          <p>Scissor 101, API & Pricing</p>
+          <p>Scissor 101, Integrations & API, Pricing</p>
         </div>
         <div>
           <h3>Solutions</h3>
-          <p>Social Media, Digital Marketing</p>
+          <p>
+            Social Media, Digital Marketing, Customer Service, For Developers
+          </p>
         </div>
         <div>
           <h3>Products</h3>
-          <p>Link Management, QR Codes</p>
+          <p>Link Management, QR Codes, Link-in-bio</p>
+        </div>
+        <div>
+          <h3>Company</h3>
+          <p>About Scissor, Careers, Partners, Press, Contact, Reviews</p>
         </div>
       </div>
     </footer>
