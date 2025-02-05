@@ -369,7 +369,9 @@ body {
 
 /* FAQs Section */
 .faqs {
-  padding: 0 60px 60px;
+    padding-bottom: 60px;
+    width: 60%;
+    margin: 0 auto;
 }
 
 .faqs > div {
@@ -377,6 +379,7 @@ body {
     justify-content: center;
     align-items: center;
     gap: 10px;
+    margin-bottom: 40px;
 }
 
 .faqs h2 {
@@ -385,7 +388,7 @@ body {
 
 .faqs details {
   border-top: 1px solid #ccc;
-  padding: 20px 0;
+  padding: 30px 0;
 }
 
 .faqs details:last-child {
@@ -393,8 +396,7 @@ body {
 }
 
 .faqs details summary {
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 20px;
   cursor: pointer;
   list-style: none;
 }
