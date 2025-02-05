@@ -275,8 +275,8 @@ body {
   font-size: 40px;
 }
 
-.pricing .cap .bar {
-  height: 48px;
+.bar {
+  height: 44px;
   width: 5px;
   background: linear-gradient(to top, #4d6b8800 0%, #112232 100%);
 }
@@ -369,13 +369,18 @@ body {
 
 /* FAQs Section */
 .faqs {
-  padding: 60px;
+  padding: 0 60px 60px;
+}
+
+.faqs > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
 
 .faqs h2 {
   font-size: 40px;
-  text-align: center;
-  margin-bottom: 40px;
 }
 
 .faqs details {
