@@ -10,9 +10,15 @@ body {
   background: radial-gradient(
     circle at top,
     #f6f4be 0%,
-    #fff 25%,
+    #f9d8d825 10%,
+    #fff 20%,
+    #fff 30%,
+    #fff 40%,
     #fff 50%,
-    #fff 75%,
+    #fff 60%,
+    #fff 70%,
+    #fff 80%,
+    #fff 90%,
     #fff 100%
   );
   color: #333;
@@ -409,8 +415,6 @@ body {
 
 /* Footer */
 .footer {
-  background-color: #222;
-  color: white;
   text-align: center;
   padding: 40px;
 }
