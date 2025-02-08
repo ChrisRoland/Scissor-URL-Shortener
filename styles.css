@@ -369,13 +369,31 @@ body {
   margin-top: 40px;
 }
 
-.mid-sec {
-    margin: 5rem 0;
+/* FAQs Section */
+.FAQ {
+    position: relative;
 }
 
-/* FAQs Section */
+.FAQ .faqBg1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: auto;
+    height: 800px;
+    z-index: -1;
+}
+
+.FAQ .faqBg2 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: auto;
+    height: 400px;
+    z-index: -1;
+}
+
 .faqs {
-    padding-bottom: 60px;
+    padding: 10rem 0;
     width: 60%;
     margin: 0 auto;
 }
@@ -415,14 +433,34 @@ body {
 
 /* Footer */
 footer {
-    padding: 40px 20px;
+    position: relative;
+}
+
+footer .footBg1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: auto;
+    height: 800px;
+    z-index: -1;
+}
+
+footer .footBg2 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: auto;
+    height: 400px;
+    z-index: -1;
 }
 
 .footer-container {
+    display: flex;
+    padding: 40px 20px;
     max-width: 1200px;
     margin: 0 auto;
 }
-
+/* 
 .footer-logo {
     display: flex;
     justify-content: space-between;
@@ -430,7 +468,16 @@ footer {
     margin-bottom: 20px;
     border-bottom: 1px solid #ddd;
     padding-bottom: 20px;
-}
+} */
+
+/* .footer-logo .logoB {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+  } */
 
 .social-icons {
     display: flex;
