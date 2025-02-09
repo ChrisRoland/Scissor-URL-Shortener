@@ -378,64 +378,77 @@ body {
 /* FAQs Section */
 .FAQ {
     position: relative;
-}
-
-.FAQ .faqBg1 {
+  }
+  
+  .FAQ .faqBg1 {
     position: absolute;
     top: 0;
     left: 0;
     width: auto;
     height: 800px;
     z-index: -1;
-}
-
-.FAQ .faqBg2 {
+  }
+  
+  .FAQ .faqBg2 {
     position: absolute;
     bottom: 0;
     right: 0;
     width: auto;
     height: 400px;
     z-index: -1;
-}
-
-.faqs {
+  }
+  
+  .faqs {
     padding: 5rem 0 10rem;
     width: 60%;
     margin: 0 auto;
-}
-
-.faqs > div {
+  }
+  
+  .faqs > div {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
     margin-bottom: 40px;
-}
-
-.faqs h2 {
-  font-size: 40px;
-}
-
-.faqs details {
-  border-bottom: 1px solid #ccc;
-  padding: 30px 0;
-}
-
-/* .faqs details:last-child {
-  border-bottom: 1px solid #ccc;
-} */
-
-.faqs details summary {
-  font-size: 20px;
-  cursor: pointer;
-  list-style: none;
-}
-
-.faqs details p {
-  font-size: 16px;
-  color: #333;
-  margin-top: 10px;
-}
+  }
+  
+  .faqs h2 {
+    font-size: 40px;
+  }
+  
+  .faqs details {
+    border-bottom: 1px solid #ccc;
+    padding: 30px 0;
+  }
+  
+  summary::-webkit-details-marker {
+    display: none;
+  }
+  
+  .faqs details summary {
+    position: relative;
+    font-size: 20px;
+    cursor: pointer;
+    list-style: none;
+  }
+  
+  .faqs details summary::before {
+    content: "+";
+    position: absolute;
+    right: 0;
+    font-size: 24px;
+  }
+  
+  .faqs details[open] summary::before {
+    content: "–";
+  }
+  
+  .faqs details p {
+    font-size: 16px;
+    color: #333;
+    margin-top: 10px;
+  }
+  
 
 /* Footer Section */
 footer {
