@@ -20,7 +20,7 @@ body {
     #fff 80%,
     #fff 90%,
     #fff 100%
-  );
+  ) no-repeat;
   color: #333;
 }
 
@@ -200,6 +200,7 @@ body {
   color: #141414;
 }
 
+/* Features Section */
 .features {
   display: flex;
 }
@@ -260,6 +261,11 @@ body {
   width: 340px;
   font-size: 16px;
   color: #141414;
+}
+
+/* Pricing Section */
+.pricing {
+    padding-bottom: 5rem;
 }
 
 .pricing .cap {
@@ -393,7 +399,7 @@ body {
 }
 
 .faqs {
-    padding: 10rem 0;
+    padding: 5rem 0 10rem;
     width: 60%;
     margin: 0 auto;
 }
@@ -411,13 +417,13 @@ body {
 }
 
 .faqs details {
-  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
   padding: 30px 0;
 }
 
-.faqs details:last-child {
+/* .faqs details:last-child {
   border-bottom: 1px solid #ccc;
-}
+} */
 
 .faqs details summary {
   font-size: 20px;
@@ -431,7 +437,7 @@ body {
   margin-top: 10px;
 }
 
-/* Footer */
+/* Footer Section */
 footer {
     position: relative;
 }
@@ -447,7 +453,7 @@ footer .footBg1 {
 
 footer .footBg2 {
     position: absolute;
-    bottom: 0;
+    bottom: -16px;
     right: 0;
     width: auto;
     height: 400px;
@@ -456,32 +462,25 @@ footer .footBg2 {
 
 .footer-container {
     display: flex;
-    padding: 40px 20px;
-    max-width: 1200px;
+    padding: 60px 20px;
+    max-width: 1000px;
+    gap: 5rem;
     margin: 0 auto;
 }
-/* 
+
 .footer-logo {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 20px;
-} */
+    flex-direction: column;
+    gap: 20px;
+}
 
-/* .footer-logo .logoB {
-    display: flex;
-    justify-content: center;
-    gap: 5px;
-    align-items: center;
-    font-size: 24px;
-    font-weight: bold;
-  } */
+.footer-logo img {
+    height: 40px;
+  }
 
 .social-icons {
     display: flex;
-    gap: 15px;
+    gap: 24px;
 }
 
 .social-icon {
@@ -489,16 +488,19 @@ footer .footBg2 {
     color: #333;
 }
 
+.social-icon i {
+    font-size: 24px;
+}
+
 .footer-columns {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+    display: flex;    
+    gap: 50px;
     margin-bottom: 30px;
 }
 
 .footer-column {
     flex: 1;
-    min-width: 150px;
+    min-width: 200px;
 }
 
 .footer-column h4 {
@@ -525,8 +527,10 @@ footer .footBg2 {
 }
 
 .footer-bottom {
-    text-align: center;
-    padding-top: 20px;
-    border-top: 1px solid #ddd;
-    color: #666;
+    text-align: right;
+    padding: 20px 50px;
+    font-size: 14px;
+    font-weight: 300;
+    word-spacing: 3px;
+    color: #112232;
 }
