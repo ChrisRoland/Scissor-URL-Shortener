@@ -742,39 +742,39 @@ footer .footBg2 {
 
 /* Responsiveness (only mobile for now) */
 @media (max-width: 768px) {
-/* Nav */
-.navbar {
+  /* Nav */
+  .navbar {
     padding: 20px;
     flex-wrap: wrap;
     gap: 4px;
-}
+  }
 
-.navbar .logo {
+  .navbar .logo {
     margin: 0 auto;
-}
+  }
 
-.nav-links {
+  .nav-links {
     margin: 20px auto;
     gap: 9px;
-}
+  }
 
-.nav-links a i {
+  .nav-links a i {
     font-size: 10px;
-}
+  }
 
-.auth-buttons {
+  .auth-buttons {
     margin: 0 auto;
-}
+  }
 
   /* Hero */
-.hero {
+  .hero {
     padding: 10px 20px 0;
-}
+  }
 
   .hero h1 {
     font-size: 24px;
     line-height: 36px;
-}
+  }
 
   .highlight img {
     position: absolute;
@@ -868,16 +868,17 @@ footer .footBg2 {
     padding: 0 20px;
   }
 
-  .features .feature-container .group-one, .features .feature-container .group-two {
+  .features .feature-container .group-one,
+  .features .feature-container .group-two {
     display: flex;
     gap: 20px;
   }
 
-    .features .feature-container .feature > div {
-        margin: 0;
-    }
+  .features .feature-container .feature > div {
+    margin: 0;
+  }
 
-.features .feature-container .feature h3 {
+  .features .feature-container .feature h3 {
     font-size: 24px;
   }
 
@@ -959,11 +960,12 @@ footer .footBg2 {
     font-size: 14px;
   }
 
-  .select-wrapper, .domain-select {
+  .select-wrapper,
+  .domain-select {
     max-width: 100%;
   }
 
-.form-row {
+  .form-row {
     flex-direction: column;
     gap: 10px;
   }
@@ -994,20 +996,20 @@ footer .footBg2 {
     font-size: 30px;
   }
 
-  /* Foot*/
-footer {
+  /* Footer */
+  footer {
     overflow: hidden;
     scrollbar-width: none;
-}
+  }
 
-footer .footBg1 {
+  footer .footBg1 {
     width: 100%;
     height: 2000px;
-}
+  }
 
-.footer-logo img {
+  .footer-logo img {
     height: 40px;
-}
+  }
 
   .footer-container {
     flex-direction: column;
@@ -1022,10 +1024,10 @@ footer .footBg1 {
     text-align: center;
   }
 
-    .footer-column {
+  .footer-column {
     overflow: scroll;
     scrollbar-width: none;
-    }
+  }
 
   .footer-column > div {
     margin-bottom: 40px;
