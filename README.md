@@ -1,1 +1,3 @@
-# CSS-Assignment-6
+# Scissor - URL Shortener
+
+- https://chrisroland.github.io/Scissor-URL-Shortener/
