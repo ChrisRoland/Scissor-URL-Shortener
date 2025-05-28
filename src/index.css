@@ -12,7 +12,6 @@
 }
 
 body {
-  /* background: linear-gradient(300deg, #f4f798 0%, #f8f9d0 50%, #ffffff 100%); */
   background: radial-gradient(
       circle at top,
       #f6f4be 0%,
@@ -29,11 +28,4 @@ body {
     )
     no-repeat;
   color: #333;
-}
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 90px;
 }
