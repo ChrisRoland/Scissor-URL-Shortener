@@ -29,3 +29,10 @@ body {
     no-repeat;
   color: #333;
 }
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 90px;
+}
