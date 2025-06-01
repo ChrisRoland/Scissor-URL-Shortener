@@ -9,18 +9,18 @@ const data = [
 
 export default function Stats() {
   return (
-    <section className="py-16">
-      <div className="container mx-auto text-center mb-8">
-        <p className="text-lg">One Stop.</p>
-        <p className="text-2xl font-semibold">
-          Four <span className="text-blue-600">Possibilities</span>.
+    <section className="stats mt-2 bg-[#f9fbfd] flex justify-between gap-[30px] py-[60px] px-[140px]">
+      <div className="stat-caption text-[40px] font-semibold">
+        <p className="">One Stop.</p>
+        <p className="">
+          Four <span className="text-[#005ae2]">Possibilities</span>.
         </p>
       </div>
-      <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+      <div className="items flex gap-[30px]">
         {data.map((stat) => (
-          <div key={stat.label} className="bg-white p-6 rounded shadow">
-            <h2 className="text-3xl font-bold mb-2">{stat.value}</h2>
-            <p className="text-gray-600">{stat.label}</p>
+          <div key={stat.label} className="stat-item">
+            <h2 style={{ fontFamily: 'Montserrat, sans-serif' }} className="text-[32px] font-[Montserrat] font-[500]">{stat.value}</h2>
+            <p className="text-[16px] text-[#141414] w-[160px] font-[300]">{stat.label}</p>
           </div>
         ))}
       </div>
