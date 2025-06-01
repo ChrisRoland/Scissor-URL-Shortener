@@ -57,3 +57,9 @@ body {
 .btn-secondary:hover {
   background-color: #007bff20;
 }
+
+.candle {
+  height: 48px;
+  width: 5px;
+  background: linear-gradient(to top, #4d6b8800 0%, #112232 100%);
+}
