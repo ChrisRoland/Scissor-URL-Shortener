@@ -1,34 +1,73 @@
-import React from 'react';
+import React from "react";
+import midBg1 from "../assets/media/mid-sec-1.png";
+import midBg2 from "../assets/media/mid-sec-2.png";
+import wandIcon from "../assets/wand-icon.svg";
+import { ChevronDown } from "lucide-react";
 
 export default function UrlForm() {
   return (
-    <div className="py-16 bg-blue-50">
-      <div className="container mx-auto flex flex-col md:flex-row items-center px-6">
-        <div className="flex-1 mb-6 md:mb-0">
-          <input type="text" placeholder="Paste URL here..." className="w-full p-3 rounded border" />
-          <div className="flex mt-4 space-x-4">
-            <div className="relative flex-1">
-              <select className="w-full p-3 border rounded appearance-none">
-                <option value="">Choose Domain</option>
-                <option>.com</option>
-                <option>.org</option>
-                <option>.xyz</option>
+    <section className="mid-sec relative bg-[#1e3448] text-white h-[523px] flex items-center justify-center">
+      <img
+        src={midBg1}
+        alt="image"
+        className="midBg1 absolute top-0 left-0 w-[980px] h-[525px]"
+      />
+      <div className="mid-sec-content p-10 bg-white rounded-[12px] shadow-[0_0_10px_0_rgba(255,255,255,0.5)] max-w-[476px] h-[355px] my-0 mx-auto z-10">
+        <div className="url-form flex flex-col gap-6">
+          <input
+            type="text"
+            placeholder="Paste URL here..."
+            className="url-input w-full placeholder:text-[#005ae29c] text-black text-[12px] h-[50px] p-4 rounded-[12px] border border-[#005ae2] outline-none focus:border-2"
+          />
+
+          <div className="form-row flex gap-4">
+            <div className="select-wrapper relative w-full max-w-[200px]">
+              <select className="domain-select w-full max-w-[200px] appearance-none text-[#005ae2] text-[12px] p-4 border border-[#005ae2] rounded-[12px] outline-none focus:border-2">
+                <option value="" disabled selected>
+                  Choose Domain
+                </option>
+                <option value=".com">.com</option>
+                <option value=".org">.org</option>
+                <option value=".xyz">.xyz</option>
               </select>
-              <i className="fas fa-chevron-down absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500"></i>
+              <ChevronDown className="absolute right-4 top-1/2 transform -translate-y-1/2 text-[#005ae2] pointer-events-none" />
             </div>
-            <input type="text" placeholder="Type Alias here" className="flex-1 p-3 border rounded" />
+            <input
+              type="text"
+              placeholder="Type alias here..."
+              className="alias-input flex-1 text-[#005ae2] text-[12px] p-4 border border-[#005ae2] rounded-[12px] outline-none focus:border-2"
+            />
           </div>
-          <button className="mt-4 bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">
+
+          <button className="trim-button bg-[#3b82f6] text-white text-[1rem] border-none rounded-full p-4 flex items-center justify-center gap-2 hover:bg-[#2563eb] transition duration-300 cursor-pointer">
             Trim URL
+            <span className="wand">
+              <img src={wandIcon} alt="icon" />
+            </span>
           </button>
-          <p className="text-sm text-gray-500 mt-2">
-            By clicking Trim URL, I agree to the <a href="#" className="underline">Terms of Service</a>, <a href="#" className="underline">Privacy Policy</a> and <a href="#" className="underline">Use of Cookies</a>.
+
+          <p className="terms-text text-[0.9rem] text-[#666]">
+            By clicking TrimURL, I agree to the{" "}
+            <a href="#" className="font-semibold text-[#3b82f6] decoration-0 hover:underline">
+              Terms of Service
+            </a>
+            ,{" "}
+            <a href="#" className="font-semibold text-[#3b82f6] decoration-0 hover:underline">
+              Privacy Policy
+            </a>{" "}
+            and{" "}
+            <a href="#" className="font-semibold text-[#3b82f6] decoration-0 hover:underline">
+              Use of Cookies
+            </a>
+            .
           </p>
         </div>
-        <div className="flex-1 text-center">
-          <img src="/media/mid-sec-1.png" alt="midBg1" className="mx-auto" />
-        </div>
       </div>
-    </div>
+      <img
+        src={midBg2}
+        alt="image"
+        className="midBg2 absolute bottom-0 right-0 w-auto h-[550px]"
+      />
+    </section>
   );
 }
