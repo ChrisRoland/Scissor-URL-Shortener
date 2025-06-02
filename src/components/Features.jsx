@@ -11,16 +11,16 @@ const features = [
       "Scissor allows you to shorten URLs of your business, events. Shorten your URL at scale, URL redirects.",
   },
   {
-    icon: customUrl,
-    title: "Custom URLs",
-    description:
-      "With Scissor, you can create custom URLs, with the length you want! A solution for socials and businesses.",
-  },
-  {
     icon: dataAnalytics,
     title: "Data Analytics",
     description:
       "Generate QR codes to your business, events. Bring your audience and customers to your doorstep with this scan and go solution.",
+  },
+  {
+    icon: customUrl,
+    title: "Custom URLs",
+    description:
+      "With Scissor, you can create custom URLs, with the length you want! A solution for socials and businesses.",
   },
   {
     icon: qrCodes,
