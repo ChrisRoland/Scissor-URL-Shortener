@@ -1,56 +1,97 @@
-import React from 'react';
+import React from "react";
+import blueCheck from "../assets/blue-check.svg";
+import whiteCheck from "../assets/white-check.svg";
 
 const plans = [
-  { name: 'Basic', price: 'Free', features: [
-      'Unlimited URL Shortening',
-      'Basic Analytics',
+  {
+    name: "Basic",
+    price: "Free",
+    features: [
+      { text: "Unlimited URL Shortening", icon: blueCheck },
+      { text: "Basic Link Analytics", icon: blueCheck },
+      { text: "Customizable Short Links", icon: blueCheck },
+      { text: "Standard Support", icon: blueCheck },
+      { text: "Ad-supported", icon: blueCheck }
     ],
-    isPrimary: false,
+    isProfessional: false,
+    className: "bg-white border border-[#005ae2] h-[455px]"
   },
-  { name: 'Pro', price: '$12/mo', features: [
-      'Custom Domains',
-      'QR Code Generation',
-      'Advanced Analytics',
+  {
+    name: "Professional",
+    price: "$15/month",
+    features: [
+      { text: "Enhanced Link Analytics", icon: whiteCheck },
+      { text: "Custom Branded Domains", icon: whiteCheck },
+      { text: "Advanced Link Customization", icon: whiteCheck },
+      { text: "Priority Support", icon: whiteCheck },
+      { text: "Ad-free Experience", icon: whiteCheck }
     ],
-    isPrimary: true,
+    isProfessional: true,
+    className: "bg-[#1e3448] text-white h-[600px] w-[410px]"
   },
-  { name: 'Enterprise', price: 'Contact Us', features: [
-      'Dedicated Account Manager',
-      'Team Collaboration',
-      'SLA & Support',
+  {
+    name: "Teams",
+    price: "$25/month",
+    features: [
+      { text: "Team Collaboration", icon: blueCheck },
+      { text: "User Roles and Permissions", icon: blueCheck },
+      { text: "Enhanced Security", icon: blueCheck },
+      { text: "API Access", icon: blueCheck },
+      { text: "Dedicated Account Manager", icon: blueCheck }
     ],
-    isPrimary: false,
-  },
+    isProfessional: false,
+    className: "bg-white border border-[#005ae2] h-[455px]"
+  }
 ];
 
 export default function Pricing() {
   return (
-    <section id="pricing" className="py-16">
-      <div className="container mx-auto text-center mb-8">
-        <span className="inline-block w-12 h-1 bg-blue-600 mb-2"></span>
-        <h2 className="text-3xl font-semibold">
-          A <span className="text-blue-600">price perfect</span> for your needs
-        </h2>
-        <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
-          Plans for personal, business, and enterprise – we’ve got you covered.
+    <section className="pricing py-16">
+      <div className="cap mt-32 mb-20 flex flex-col items-center justify-center text-center">
+        <div className="flex items-center justify-center gap-2.5">
+          <span className="candle"></span>
+          <h2 className="text-[40px] font-bold">
+            A <span className="text-[#005ae2]">price perfect</span> for your needs.
+          </h2>
+        </div>
+        <p className="text-[16px] text-[#141414] w-[580px]">
+          From catering for your personal, business, event, socials needs, you
+          can be rest assured we have you in mind in our pricing.
         </p>
       </div>
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+      
+      <div className="pricing-cards my-40 relative flex justify-center items-center gap-96">
         {plans.map((plan) => (
-          <div key={plan.name} className={`border rounded p-6 flex flex-col ${plan.isPrimary ? 'border-blue-600' : 'border-gray-200'}`}>
-            <h3 className="text-xl font-semibold mb-4">{plan.name}</h3>
-            <p className="text-3xl font-bold mb-4">{plan.price}</p>
-            <ul className="flex-1 mb-6 space-y-2">
-              {plan.features.map((feat) => (
-                <li key={feat} className="flex items-center">
-                  <i className="fas fa-check text-green-500 mr-2"></i>
-                  <span>{feat}</span>
+          <div 
+            key={plan.name}
+            className={`pricing-card ${plan.name.toLowerCase()} ${plan.className} py-[20px] px-[70px] rounded-[12px] shadow-[0_0_20px_0_rgba(0,0,0,0.1)] ${
+              plan.isProfessional ? "absolute left-[34.65%]" : ""
+            }`}
+          >
+            <h3 className="text-[24px] mb-[10px] font-extralight">{plan.name}</h3>
+            <p className="mb-[20px] text-[40px] font-[600] amount">{plan.price}</p>
+            <p className="text-[20px] mb-[20px] narration font-extralight">
+              {plan.name === "Basic" 
+                ? "Free plan for all users" 
+                : plan.name === "Professional" 
+                  ? "Ideal for business creators" 
+                  : "Share with up to 10 users"}
+            </p>
+            <ul className="list-none p-0">
+              {plan.features.map((feature) => (
+                <li key={feature.text} className="flex items-center gap-[10px] text-[14px] mb-[20px]">
+                  <img src={feature.icon} alt="check" />
+                  {feature.text}
                 </li>
               ))}
             </ul>
-            <button className={`mt-auto ${plan.isPrimary ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700'} py-2 rounded hover:opacity-90`}>Select</button>
           </div>
         ))}
+      </div>
+      
+      <div className="pricing-cta flex items-center justify-center gap-5">
+        <button className="btn btn-secondary">Get Custom Pricing</button>
+        <button className="btn btn-primary">Select Pricing</button>
       </div>
     </section>
   );
