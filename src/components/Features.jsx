@@ -40,7 +40,7 @@ export default function Features() {
             Why Choose <span className="text-[#005ae2]">Scissors</span>
           </h2>
         </div>
-        <p className="text-[16px] text-[#141414] w-[370px]">
+        <p className="info text-[16px] text-[#141414] w-[370px]">
           Scissors is the hub of everything that has to do with your link
           management. We shorten your URLs, allow you creating custom ones for
           your personal, business, event usage. Our swift QR code creation,

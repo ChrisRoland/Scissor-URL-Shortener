@@ -6,15 +6,26 @@ import disk from "../assets/media/disk.png";
 
 export default function Hero() {
   return (
-    <section className="text-center p-[60px] pb-0">
-      <div className="flex flex-col items-center justify-center">
-        <h1 className="text-[48px] leading-[96px]">
+    <section className="hero text-center p-[60px] pb-0">
+      <div className="hero-content flex flex-col items-center justify-center">
+        <h1 className="text-[48px] leading-[96px] font-semibold hidden md:block">
           Optimize Your Online Experience with Our
           <br />
           Advanced&nbsp;
           <span className="highlight relative text-[#005ae2]">
             <img src={line} alt="line" className="absolute top-[3.5rem] left-[5rem] w-[173.63px] h-[19.91px]" />
             URL Shortening&nbsp;
+          </span>
+          Solution
+        </h1>
+        {/* Mobile version of the hero title */}
+        <h1 className="text-[48px] leading-[96px] sm:hidden">
+          Optimize Your Online Experience with Our
+          <br />
+          Advanced&nbsp;
+          <span className="highlight relative text-[#005ae2]">
+            URL Shortening&nbsp;
+            <img src={line} alt="line" className="mob-line" />
           </span>
           Solution
         </h1>
@@ -29,7 +40,7 @@ export default function Hero() {
         </div>
         <div className="hero-image relative mt-12">
           <img src={illustration} alt="Illustration" className="w-[768px] h-[224px] mx-auto" />
-          <img src={blob} alt="blob" className="-z-1 absolute -top-3 left-67 w-[238.55px] h-[251.2px]" />
+          <img src={blob} alt="blob" className="blob -z-1 absolute -top-3 left-69 w-[238.55px] h-[251.2px]" />
           <img src={disk} alt="disk" className="mt-6 h-[93px]" />
         </div>
       </div>
